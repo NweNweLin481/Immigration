@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/insert','InsertController@index');
-Route::post('/insert','InsertController@insert');
+Route::post('/insert','InsertController@store');
 Route::get('/person',function (){
     return view('person');
 });
@@ -25,5 +25,7 @@ Route::get('/detail',function(){
 Route::get('update',function(){
     return view('update');
 });
-Route::get('/insert/{id}','InsertController@search');
+
+Route::get('/search','SearchController@index');
+Route::post('/search','SearchController@search');
 
